@@ -5,7 +5,7 @@ const StyleWrapper = styled.div`
     margin: 0px;
     padding: 0px;
   }
-  background-color: #8AF76F;
+  background-color: #212121;
   .box {
     display: flex;
     justify-content: center;
@@ -13,7 +13,7 @@ const StyleWrapper = styled.div`
     min-height: 100%;
   }
   .contaner {
-    background: #F4F6F6;
+    background: #00ffff;
     border-radius: 5px;
     box-shadow: 0 1.5px 0 0 rgba(0, 0, 0, 0.1);
     min-width: 320px;

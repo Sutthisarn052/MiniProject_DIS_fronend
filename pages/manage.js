@@ -62,7 +62,7 @@ const Manage = (props) => {
   };
   return (
     <Layout token={token}>
-      <div className="grid grid-cols-1">
+      <div className="grid grid-cols-1 ">
         <div className="max-w-sm mx-auto">
           <Form
             form={form}

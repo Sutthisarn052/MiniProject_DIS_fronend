@@ -25,7 +25,7 @@ const signup = () => {
     <div className="flex items-center justify-center w-screen h-screen bg-gray-200">
       <div className=" border-2 border-green-400 p-4 rounded-xl bg-white w-80">
         <div className="grid grid-cols-1 gap-4">
-          <h1 className="text-2xl font-bold text-center">Vegetation</h1>
+          <h1 className="text-2xl font-bold text-center">Science flower garden</h1>
           <p className="text-gray-500">ผู้ใช้งาน</p>
           <Input
             type="text"
