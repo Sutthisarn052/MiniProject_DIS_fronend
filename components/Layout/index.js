@@ -1,12 +1,11 @@
 import Header from "./components/header";
-import { StyledWrapper } from "./styled";
 
 const Layout = ({ children, ...props }) => {
   return (
-    <StyledWrapper>
+    <div className="flex flex-col w-screen min-h-screen">
       <Header token={props.token} />
-      <div className="content">{children}</div>
-    </StyledWrapper>
+      <div className="py-10">{children}</div>
+    </div>
   );
 };
 

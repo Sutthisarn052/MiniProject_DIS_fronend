@@ -1,4 +1,3 @@
-import { StyledWrapper } from "./styled";
 import { Menu, Dropdown, Divider } from "antd";
 import Link from "next/link";
 import axios from "axios";
@@ -8,7 +7,7 @@ import { useLayoutEffect, useState } from "react";
 const Header = (props) => {
   const { token } = props;
   const route = useRouter();
-  const [profile, setProfile] = useState()
+  const [profile, setProfile] = useState();
 
   useLayoutEffect(() => {
     getProfile();
@@ -19,7 +18,7 @@ const Header = (props) => {
       headers: { Authorization: `Bearer ${token}` },
     });
     if (result?.status === 200) {
-      setProfile(result.data)
+      setProfile(result.data);
     }
   };
 
@@ -52,16 +51,16 @@ const Header = (props) => {
   );
 
   return (
-    <StyledWrapper>
-      <div className="title">Vegetation</div>
-      <div className="username-menu">
-        <div className="sub-username">{ profile?.username}</div>
-        <Divider type="vertical" className="divider" />
+    <div className="flex items-center justify-between p-10 w-full h-12 bg-green-400">
+      <div className="text-3xl font-bold">Vegetation</div>
+      <div className="flex items-center">
+        <div className="text-base font-medium">{profile?.username}</div>
+        <Divider type="vertical" className=" bg-black h-5" />
         <Dropdown overlay={menu}>
-          <div className="sub-menu">เมนู</div>
+          <div className="flex items-center">เมนู</div>
         </Dropdown>
       </div>
-    </StyledWrapper>
+    </div>
   );
 };
 export default Header;

@@ -3,7 +3,6 @@ import React, { useLayoutEffect, useState } from "react";
 import CardVegetation from "../components/Card";
 import Layout from "../components/Layout";
 import withAuth from "../components/withAuth";
-import { StyledWrapper } from "./styled";
 const Home = (props) => {
   const { token } = props;
   const [profile, setProfile] = useState();
@@ -34,7 +33,7 @@ const Home = (props) => {
 
   return (
     <Layout token={token}>
-      <StyledWrapper>
+      <div className="flex flex-wrap w-full justify-center">
         {vegatation.length ? (
           <>
             {vegatation?.map((item, index) => {
@@ -56,7 +55,7 @@ const Home = (props) => {
         ) : (
           <div>No data</div>
         )}
-      </StyledWrapper>
+      </div>
     </Layout>
   );
 };

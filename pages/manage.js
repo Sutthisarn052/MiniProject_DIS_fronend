@@ -4,7 +4,6 @@ import React, { useLayoutEffect, useState } from "react";
 import CardVegetation from "../components/Card";
 import Layout from "../components/Layout";
 import withAuth from "../components/withAuth";
-import { FormWrapper, StyledWrapperManage, Container } from "./styled";
 
 const Manage = (props) => {
   const { token } = props;
@@ -13,7 +12,7 @@ const Manage = (props) => {
   const [form] = Form.useForm();
 
   useLayoutEffect(() => {
-      fetch();
+    fetch();
   }, []);
 
   const fetch = async () => {
@@ -24,7 +23,7 @@ const Manage = (props) => {
     const result = await axios.get(`http://localhost/api/profile`, {
       headers: { Authorization: `Bearer ${token}` },
     });
-      if (result?.status === 200) {
+    if (result?.status === 200) {
       setProfile(result.data);
       getVegetation(result.data.username);
     }
@@ -32,8 +31,8 @@ const Manage = (props) => {
 
   const getVegetation = async (username) => {
     const result = await axios.get(`http://localhost/api/history/${username}`);
-      if (result?.status === 200) {
-          console.log(result.data);
+    if (result?.status === 200) {
+      console.log(result.data);
       setVegatation(result.data);
     }
   };
@@ -63,8 +62,8 @@ const Manage = (props) => {
   };
   return (
     <Layout token={token}>
-      <Container>
-        <FormWrapper>
+      <div className="grid grid-cols-1">
+        <div className="max-w-sm mx-auto">
           <Form
             form={form}
             name="basic"
@@ -119,13 +118,13 @@ const Manage = (props) => {
               </Button>
             </Form.Item>
           </Form>
-        </FormWrapper>
-        <StyledWrapperManage>
+        </div>
+        <div className="w-full flex flex-wrap">
           {vegatation.length ? (
             <>
               {vegatation?.map((item, index) => {
                 return (
-                  <React.Fragment key={index}>
+                  <div>
                     <CardVegetation
                       image={item?.imgURL}
                       name={item?.scientific_name}
@@ -136,15 +135,15 @@ const Manage = (props) => {
                       tst_id={item?.tst_id}
                       btn={true}
                     />
-                  </React.Fragment>
+                  </div>
                 );
               })}
             </>
           ) : (
             <div>No data</div>
           )}
-        </StyledWrapperManage>
-      </Container>
+        </div>
+      </div>
     </Layout>
   );
 };

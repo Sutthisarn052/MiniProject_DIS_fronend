@@ -2,7 +2,6 @@ import { Button, Modal, Form, Input } from "antd";
 import axios from "axios";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { StyledWrapper } from "./styled";
 
 const CardVegetation = (props) => {
   const {
@@ -66,36 +65,36 @@ const CardVegetation = (props) => {
   };
 
   return (
-    <StyledWrapper>
-      <div className="images-vegetation">
+    <div className="flex flex-col w-56 max-h-80 border-2 border-green-400 m-3 rounded-lg">
+      <div className="p-5 max-h-36 object-cover">
         <img src={`${image}`} alt={name} width="100%" height="auto" />
       </div>
-      <div className="content-vegetation">
-        <div className="listview">
+      <div className="flex flex-col h-48 overflow-y-hidden relative p-2 pb-3 text-sm font-bold">
+        <div>
           <div>
-            ชื่อวิทยาศาสตร์ : <span className="detail-of-content">{name}</span>
+            ชื่อวิทยาศาสตร์ : <span className="text-sm font-medium">{name}</span>
           </div>
           <div>
-            ลักษณะเฉพาะ :{" "}
-            <span className="detail-of-content">{characteristic}</span>
+            ลักษณะเฉพาะ :
+            <span className="text-sm font-medium">{characteristic}</span>
           </div>
           <div>
-            แหล่งที่พบ :{" "}
-            <span className="detail-of-content">{foundSource}</span>
+            แหล่งที่พบ :
+            <span className="text-sm font-medium">{foundSource}</span>
           </div>
           <div>
-            วันที่บันทึก : <span className="detail-of-content">{date}</span>
+            วันที่บันทึก : <span className="text-sm font-medium">{date}</span>
           </div>
           <div>
-            บันทึกโดย : <span className="detail-of-content">{author}</span>
+            บันทึกโดย : <span className="text-sm font-medium">{author}</span>
           </div>
         </div>
         {btn && (
-          <div className="btn-edit-del">
+          <div className="mt-3">
             <Button
               type="primary"
               size="middle"
-              className="btn"
+              className="mx-3"
               onClick={showModal}
             >
               แก้ไข
@@ -104,7 +103,7 @@ const CardVegetation = (props) => {
               type="primary"
               danger
               size="middle"
-              className="btn"
+              className="mx-3"
               onClick={() => handleDelete()}
             >
               ลบ
@@ -176,7 +175,7 @@ const CardVegetation = (props) => {
           </div>
         )}
       </div>
-    </StyledWrapper>
+    </div>
   );
 };
 export default CardVegetation;
