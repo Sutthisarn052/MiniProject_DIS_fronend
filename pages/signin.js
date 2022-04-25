@@ -50,7 +50,7 @@ const sigin = ({ token }) => {
     <StyleWrapper>
       <div className="box">
         <div className="contaner">
-          <h1>Vegetation</h1>
+          <h1>Plant Encyclopedia</h1>
           <p>ผู้ใช้งาน</p>
           <Input
             type="text"

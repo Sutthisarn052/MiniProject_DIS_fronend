@@ -52,7 +52,7 @@ const Header = (props) => {
 
   return (
     <div className="flex items-center justify-between p-10 w-full h-12 bg-green-400">
-      <div className="text-3xl font-bold">Science flower garden</div>
+      <div className="text-3xl font-bold">Plant encyclopedia</div>
       <div className="flex items-center">
         <div className="text-base font-medium">{profile?.username}</div>
         <Divider type="vertical" className=" bg-black h-5" />
