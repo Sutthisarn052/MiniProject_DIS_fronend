@@ -65,11 +65,11 @@ const CardVegetation = (props) => {
   };
 
   return (
-    <div className="flex flex-col w-56 max-h-80 border-2 border-green-400 m-3 rounded-lg">
+    <div className="bg-lime-500 flex flex-col w-56 max-h-80 border-2 border-black m-3 rounded-lg">
       <div className="p-5 max-h-36 object-cover">
         <img src={`${image}`} alt={name} width="100%" height="auto" />
       </div>
-      <div className="flex flex-col h-48 overflow-y-hidden relative p-2 pb-3 text-sm font-bold">
+      <div className="flex flex-col h-48 overflow-auto relative p-2 pb-3 text-sm font-bold">
         <div>
           <div>
             ชื่อวิทยาศาสตร์ : <span className="text-sm font-medium">{name}</span>

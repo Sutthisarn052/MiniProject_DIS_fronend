@@ -20,11 +20,11 @@ a {
   font-family: 'Bai Jamjuree', sans-serif;
 }
 ::-webkit-scrollbar {
-  width: 2px;
+  width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: rgb(132 204 22);
 }
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: rgb(0, 0, 0);
 }
